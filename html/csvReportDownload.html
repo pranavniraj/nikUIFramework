@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        
+        <title>Download Report</title>
+    </head>
+    <body>
+        <label for="header">Header JSON Data</label>
+        <textarea id="headerData" name="headerData" rows="4" cols="50">{"name":"Name", "age":"Age","address":"Address", "mobile":"Mobile"}</textarea>
+        </br></br>
+        <label for="header">JSON Value</label>
+        <textarea id="headerDataValue" name="headerDataValue" rows="10" cols="50">[{"name":"pranav", "age":"30","address":"Bangalore india", "mobile":"9876543210"},{"name":"Niraj","address":"Mumbai", "mobile":"9123456780"},{"name":"kumar", "age":"33","address":"Delhi", "mobile":"855555555"}]</textarea>
+        
+        
+        <p><button onclick="ReportDownloder()">Download Report</button></p>
+    </body>
+    
+    <script>
+    function ReportDownloder(){
+        var headerData = JSON.parse(document.getElementById("headerData").value);
+        var headerDataValue = JSON.parse(document.getElementById("headerDataValue").value);
+        csvReportDownloder(headerData,headerDataValue,"report");
+    }
+        
+    
+    </script>
+</html>
